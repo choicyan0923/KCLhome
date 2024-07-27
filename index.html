@@ -18,20 +18,21 @@
         }
         .content {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            width: 95%; /* Increased width */
-            max-width: 1400px; /* Increased max width */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 95%;
+            max-width: 1400px;
         }
         .container {
-            width: 70%; /* Increased width */
-            max-width: 1200px; /* Increased max width */
+            width: 100%;
+            max-width: 800px;
             padding: 20px;
             background: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             box-sizing: border-box;
-            margin: 20px auto; /* Added margin for spacing */
+            margin: 20px auto;
         }
         h1 {
             color: #e38f3b;
@@ -57,32 +58,30 @@
             justify-content: center;
             gap: 10px;
             margin: 20px 0;
+            flex-wrap: wrap;
         }
-        .image-content {
+        .side-content {
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            width: 30%; /* Adjusted width for symmetry */
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+            gap: 20px;
         }
-        .reference-content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            width: 30%; /* Adjusted width for symmetry */
+        .side-content div {
+            width: 100%;
+            max-width: 300px;
         }
         .reference-images, .compiler-image {
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
-            flex-direction: column; /* Set to column for vertical alignment */
+            flex-direction: column;
             align-items: center;
         }
         .reference-images img, .compiler-image img, .ebs-image img {
-            width: 225px;
-            margin: 10px 0; /* Adjusted margin for vertical spacing */
-        }
-        .ebs-image img {
-            width: 225px;
+            width: 100%;
+            max-width: 225px;
+            margin: 10px 0;
         }
         .button {
             display: inline-block;
@@ -97,19 +96,38 @@
         .button:hover {
             background-color: #ffa726;
         }
+        @media (min-width: 768px) {
+            .content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            .container {
+                width: 70%;
+                margin: 20px auto;
+            }
+            .side-content {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 30%;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="content">
-        <div class="image-content">
-            <div class="ebs-image">
-                <img src="https://static.ebs.co.kr/images/public/2023/04/28/14/28/26/2fea4c86-1e13-4800-8476-8ace1c7dbfe4.png" alt="EBS">
-            </div>
-            <h4>직접 HTML을 실행시켜볼 수 있는 사이트 :</h4>
-            <div class="compiler-image">
-                <a href="https://www.tutorialspoint.com/online_html_editor.php">
-                    <img src="https://play-lh.googleusercontent.com/F10OOHNkeNbOf5x9DYpoihAIkLRlSMxCsPHyCErXgm0oM2gZtJwVymJIZoN59v4JJWBZ" alt="Tutorialspoint">
-                </a>
+        <div class="side-content">
+            <div class="image-content">
+                <div class="ebs-image">
+                    <img src="https://static.ebs.co.kr/images/public/2023/04/28/14/28/26/2fea4c86-1e13-4800-8476-8ace1c7dbfe4.png" alt="EBS">
+                </div>
+                <h4>직접 HTML을 실행시켜볼 수 있는 사이트 :</h4>
+                <div class="compiler-image">
+                    <a href="https://www.tutorialspoint.com/online_html_editor.php">
+                        <img src="https://play-lh.googleusercontent.com/F10OOHNkeNbOf5x9DYpoihAIkLRlSMxCsPHyCErXgm0oM2gZtJwVymJIZoN59v4JJWBZ" alt="Tutorialspoint">
+                    </a>
+                </div>
             </div>
         </div>
         <div class="container">
@@ -124,15 +142,17 @@
                 <h2>사이트 제작자 : 30633 최영운, 30726 임도윤</h2>
             </div>
         </div>
-        <div class="reference-content">
-            <h3>참고 사이트 :</h3>
-            <div class="reference-images">
-                <a href="https://www.w3schools.com/">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/W3Schools_logo.svg/2175px-W3Schools_logo.svg.png" alt="W3Schools">
-                </a>
-                <a href="https://ko.wikipedia.org/wiki/HTML">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Wikipedia-logo-v2-ko.svg/1200px-Wikipedia-logo-v2-ko.svg.png" alt="Wikipedia">
-                </a>
+        <div class="side-content">
+            <div class="reference-content">
+                <h3>참고 사이트 :</h3>
+                <div class="reference-images">
+                    <a href="https://www.w3schools.com/">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/W3Schools_logo.svg/2175px-W3Schools_logo.svg.png" alt="W3Schools">
+                    </a>
+                    <a href="https://ko.wikipedia.org/wiki/HTML">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Wikipedia-logo-v2-ko.svg/1200px-Wikipedia-logo-v2-ko.svg.png" alt="Wikipedia">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
